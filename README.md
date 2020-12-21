@@ -7,8 +7,9 @@ This project will give you an opportunity to demonstrate your ability to perform
 Please refer to following Links for Project Planning:
 
 * A link to a Trello board for task tracking of the project
-
+	https://trello.com/b/9VNP1ghv/todo
 * A link to a spreadsheet that includes the original and final project plan
+	https://drive.google.com/file/d/1vCmnPmU8vT62l98Dc3_tZdOrWL-aXz9n/view?usp=sharing
 
 
 ## Instructions

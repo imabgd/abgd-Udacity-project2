@@ -199,25 +199,25 @@ A successful prediction will look like this:
 
 Next, we'll need to create an Azure DevOps project and connect to Azure. The screenshots below show the steps, but if you need to, you can also refer to the official documentation for more detail.
 	
-	1. Create new project and name it
+A. Create new project and name it
 	
-	2. Ensure you set up a new service connection via Azure Resource Manager and Pipeline
+B. Ensure you set up a new service connection via Azure Resource Manager and Pipeline
           ![image](https://user-images.githubusercontent.com/74898057/102759064-9e4f8180-4399-11eb-93a1-9f9445d3ac17.png)
 	
-	3. Select Pipeline and create a new one.
+C. Select Pipeline and create a new one.
           ![image](https://user-images.githubusercontent.com/74898057/102759257-df479600-4399-11eb-8cbe-f71f00febbe1.png)
 	
-	4. Create the GitHub Integration
+D. Create the GitHub Integration
 	
-	5. Configure Python to Linux Web App on Azure
+E. Configure Python to Linux Web App on Azure
 	
-	6: Set Up the Continuous Delivery Workflow
+F: Set Up the Continuous Delivery Workflow
               This process will create a YAML file azure-pipelines-yml
               ![image](https://user-images.githubusercontent.com/74898057/102759389-0c944400-439a-11eb-8fe0-2ca24fcbe0e5.png)
               ![image](https://user-images.githubusercontent.com/74898057/102759564-4c5b2b80-439a-11eb-85d3-43e10443803a.png)
               ![image](https://user-images.githubusercontent.com/74898057/102759661-6ac12700-439a-11eb-9134-414195c4f457.png)
 
-	7: Add a Quality Control Gate
+G: Add a Quality Control Gate
               Now we'll see how we can add a lint step to gate your code against syntax failure. Follow along with the video below to extend the current configuration 
               to add a quality control gate with pylint.
               
@@ -232,44 +232,44 @@ Next, we'll need to create an Azure DevOps project and connect to Azure. The scr
 
 * Output of streamed log files from deployed application
 
-      az webapp log tail
+      az webapp log tail -n <appservice name>
 
-(.flask-ml-azure) abhijeet@Azure:~/abgd-Udacity-project2$ az webapp log tail
-2020-12-21T01:10:01  Welcome, you are now connected to log-streaming service.
+		(.flask-ml-azure) abhijeet@Azure:~/abgd-Udacity-project2$ az webapp log tail -n abgd-flask
+		2020-12-21T01:10:01  Welcome, you are now connected to log-streaming service.
 
-Starting Log Tail -n 10 of existing logs ----
+		Starting Log Tail -n 10 of existing logs ----
 
-/home/LogFiles/__lastCheckTime.txt  (https://abgd-flask.scm.azurewebsites.net/api/vfs/LogFiles/__lastCheckTime.txt)
-12/21/2020 00:46:28
-
-
-/home/LogFiles/kudu/trace/aa12661d08fa-0b1bfd9d-7d47-45e6-8a45-d0fd10c3852c.txt  (https://abgd-flask.scm.azurewebsites.net/api/vfs/LogFiles/kudu/trace/aa12661d08fa-0b1bfd9d-7d47-45e6-8a45-d0fd10c3852c.txt)
-2020-12-21T00:41:47  Startup Request, url: /api/zipdeploy?isAsync=true, method: POST, type: request, pid: 178,1,5, SCM_DO_BUILD_DURING_DEPLOYMENT: True, ScmType: None
+		/home/LogFiles/__lastCheckTime.txt  (https://abgd-flask.scm.azurewebsites.net/api/vfs/LogFiles/__lastCheckTime.txt)
+		12/21/2020 00:46:28
 
 
-/home/LogFiles/2020_12_21_lw0sdlwk00002Q_default_docker.log  (https://abgd-flask.scm.azurewebsites.net/api/vfs/LogFiles/2020_12_21_lw0sdlwk00002Q_default_docker.log)
-2020-12-21T01:02:16.798288292Z [2020-12-21 01:02:16,797] INFO in app: JSON payload: %s json_payload
-2020-12-21T01:02:16.807036650Z [2020-12-21 01:02:16,806] INFO in app: inference payload DataFrame: %s inference_payload
-2020-12-21T01:02:16.812537287Z [2020-12-21 01:02:16,812] INFO in app: Scaling Payload: %s payload
-2020-12-21T01:02:16.872270487Z 172.16.0.1 - - [21/Dec/2020:01:02:16 +0000] "POST /predict HTTP/1.1" 200 35 "-" "curl/7.64.0"
-2020-12-21T01:02:16.875871911Z 172.16.0.1 - - [21/Dec/2020:01:02:16 +0000] "GET / HTTP/1.1" 200 32 "-" "ReadyForRequest/1.0 (AppInit)"
-
-2020-12-21T01:04:49.739498070Z 172.16.0.1 - - [21/Dec/2020:01:04:49 +0000] "GET / HTTP/1.1" 200 32 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:84.0) Gecko/20100101 Firefox/84.0"
-
-2020-12-21T01:04:50.074546950Z 172.16.0.1 - - [21/Dec/2020:01:04:50 +0000] "GET /favicon.ico HTTP/1.1" 404 232 "https://abgd-flask.azurewebsites.net/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:84.0) Gecko/20100101 Firefox/84.0"
+		/home/LogFiles/kudu/trace/aa12661d08fa-0b1bfd9d-7d47-45e6-8a45-d0fd10c3852c.txt  (https://abgd-flask.scm.azurewebsites.net/api/vfs/LogFiles/kudu/trace/aa12661d08fa-0b1bfd9d-7d47-45e6-8a45-d0fd10c3852c.txt)
+		2020-12-21T00:41:47  Startup Request, url: /api/zipdeploy?isAsync=true, method: POST, type: request, pid: 178,1,5, SCM_DO_BUILD_DURING_DEPLOYMENT: True, ScmType: None
 
 
+		/home/LogFiles/2020_12_21_lw0sdlwk00002Q_default_docker.log  (https://abgd-flask.scm.azurewebsites.net/api/vfs/LogFiles/2020_12_21_lw0sdlwk00002Q_default_docker.log)
+		2020-12-21T01:02:16.798288292Z [2020-12-21 01:02:16,797] INFO in app: JSON payload: %s json_payload
+		2020-12-21T01:02:16.807036650Z [2020-12-21 01:02:16,806] INFO in app: inference payload DataFrame: %s inference_payload
+		2020-12-21T01:02:16.812537287Z [2020-12-21 01:02:16,812] INFO in app: Scaling Payload: %s payload
+		2020-12-21T01:02:16.872270487Z 172.16.0.1 - - [21/Dec/2020:01:02:16 +0000] "POST /predict HTTP/1.1" 200 35 "-" "curl/7.64.0"
+		2020-12-21T01:02:16.875871911Z 172.16.0.1 - - [21/Dec/2020:01:02:16 +0000] "GET / HTTP/1.1" 200 32 "-" "ReadyForRequest/1.0 (AppInit)"
 
-/home/LogFiles/2020_12_21_lw0sdlwk00002Q_docker.log  (https://abgd-flask.scm.azurewebsites.net/api/vfs/LogFiles/2020_12_21_lw0sdlwk00002Q_docker.log)
-2020-12-21T00:46:28.401Z INFO  - Starting container for site
-2020-12-21T00:46:28.401Z INFO  - docker run -d -p 3075:8000 --name abgd-flask_0_0691d454 -e WEBSITE_SITE_NAME=abgd-flask -e WEBSITE_AUTH_ENABLED=False -e WEBSITE_ROLE_INSTANCE_ID=0 -e WEBSITE_HOSTNAME=abgd-flask.azurewebsites.net -e WEBSITE_INSTANCE_ID=259c5b1f5e30f64a53265be8c593f432beb4dcc61d04b03bf7a50db047ff9451 -e HTTP_LOGGING_ENABLED=1 appsvc/python:3.7_20201112.3
+		2020-12-21T01:04:49.739498070Z 172.16.0.1 - - [21/Dec/2020:01:04:49 +0000] "GET / HTTP/1.1" 200 32 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:84.0) Gecko/20100101 Firefox/84.0"
 
-2020-12-21T00:46:34.189Z INFO  - Initiating warmup request to container abgd-flask_0_0691d454 for site abgd-flask
-2020-12-21T00:46:51.375Z INFO  - Waiting for response to warmup request for container abgd-flask_0_0691d454. Elapsed time = 17.1859248 sec
-2020-12-21T00:47:14.938Z INFO  - Container abgd-flask_0_0691d454 for site abgd-flask initialized successfully and is ready to serve requests.
+		2020-12-21T01:04:50.074546950Z 172.16.0.1 - - [21/Dec/2020:01:04:50 +0000] "GET /favicon.ico HTTP/1.1" 404 232 "https://abgd-flask.azurewebsites.net/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:84.0) Gecko/20100101 Firefox/84.0"
 
 
-/home/LogFiles/webssh/pm2.log  (https://abgd-flask.scm.azurewebsites.net/api/vfs/LogFiles/webssh/pm2.log)
+
+		/home/LogFiles/2020_12_21_lw0sdlwk00002Q_docker.log  (https://abgd-flask.scm.azurewebsites.net/api/vfs/LogFiles/2020_12_21_lw0sdlwk00002Q_docker.log)
+		2020-12-21T00:46:28.401Z INFO  - Starting container for site
+		2020-12-21T00:46:28.401Z INFO  - docker run -d -p 3075:8000 --name abgd-flask_0_0691d454 -e WEBSITE_SITE_NAME=abgd-flask -e WEBSITE_AUTH_ENABLED=False -e WEBSITE_ROLE_INSTANCE_ID=0 -e WEBSITE_HOSTNAME=abgd-flask.azurewebsites.net -e WEBSITE_INSTANCE_ID=259c5b1f5e30f64a53265be8c593f432beb4dcc61d04b03bf7a50db047ff9451 -e HTTP_LOGGING_ENABLED=1 appsvc/python:3.7_20201112.3
+
+		2020-12-21T00:46:34.189Z INFO  - Initiating warmup request to container abgd-flask_0_0691d454 for site abgd-flask
+		2020-12-21T00:46:51.375Z INFO  - Waiting for response to warmup request for container abgd-flask_0_0691d454. Elapsed time = 17.1859248 sec
+		2020-12-21T00:47:14.938Z INFO  - Container abgd-flask_0_0691d454 for site abgd-flask initialized successfully and is ready to serve requests.
+
+
+		/home/LogFiles/webssh/pm2.log  (https://abgd-flask.scm.azurewebsites.net/api/vfs/LogFiles/webssh/pm2.log)
 
 
 

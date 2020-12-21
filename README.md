@@ -198,19 +198,26 @@ A successful prediction will look like this:
 6. Create an Azure DevOps project
 
 Next, we'll need to create an Azure DevOps project and connect to Azure. The screenshots below show the steps, but if you need to, you can also refer to the official documentation for more detail.
-          1. Create new project and name it
-          2. Ensure you set up a new service connection via Azure Resource Manager and Pipeline
+	
+	1. Create new project and name it
+	
+	2. Ensure you set up a new service connection via Azure Resource Manager and Pipeline
           ![image](https://user-images.githubusercontent.com/74898057/102759064-9e4f8180-4399-11eb-93a1-9f9445d3ac17.png)
-          3. Select Pipeline and create a new one.
+	
+	3. Select Pipeline and create a new one.
           ![image](https://user-images.githubusercontent.com/74898057/102759257-df479600-4399-11eb-8cbe-f71f00febbe1.png)
-          4. Create the GitHub Integration
-          5. Configure Python to Linux Web App on Azure
-          6: Set Up the Continuous Delivery Workflow
+	
+	4. Create the GitHub Integration
+	
+	5. Configure Python to Linux Web App on Azure
+	
+	6: Set Up the Continuous Delivery Workflow
               This process will create a YAML file azure-pipelines-yml
               ![image](https://user-images.githubusercontent.com/74898057/102759389-0c944400-439a-11eb-8fe0-2ca24fcbe0e5.png)
               ![image](https://user-images.githubusercontent.com/74898057/102759564-4c5b2b80-439a-11eb-85d3-43e10443803a.png)
               ![image](https://user-images.githubusercontent.com/74898057/102759661-6ac12700-439a-11eb-9134-414195c4f457.png)
-          7: Add a Quality Control Gate
+
+	7: Add a Quality Control Gate
               Now we'll see how we can add a lint step to gate your code against syntax failure. Follow along with the video below to extend the current configuration 
               to add a quality control gate with pylint.
               
@@ -271,4 +278,4 @@ Starting Log Tail -n 10 of existing logs ----
 More Test Cases can be added with Pytest
 
 ## Demo 
-
+https://youtu.be/6YEH5kTqXiE

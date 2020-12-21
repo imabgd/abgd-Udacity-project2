@@ -12,7 +12,9 @@
 
 <TODO:  
 * Architectural Diagram (Shows how key parts of the system work)>
-https://github.com/imabgd/abgd-Udacity-project2/issues/4#issue-771855554
+
+![image](https://user-images.githubusercontent.com/74898057/102742846-f8d9e500-437b-11eb-9283-1b06277a3c4a.png)
+
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
 * Project running on Azure App Service
